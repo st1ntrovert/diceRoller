@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DiceRoller</string>
+    <string name="choose_dice">Choose dice</string>
+    <string name="roll_button_text">Roll your destiny</string>
+</resources>
