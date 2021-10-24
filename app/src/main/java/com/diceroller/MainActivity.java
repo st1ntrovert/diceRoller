@@ -8,14 +8,14 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import java.lang.Math;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    int rollResult = 0;
+    Random rand = new Random();
+
+    int rollResult;
     int max;
-    int min = 1;
-    int range = max - min + 1;
 
     RadioButton d6RadioButton;
     RadioButton d20RadioButton;
@@ -47,13 +47,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.roll_button:
                 if (d6RadioButton.isChecked()) {
                     max = 6;
-                    rollResult = (int) Math.floor(Math.random()*(range)+min);
+                    rollResult = rand.nextInt(max) + 1;
                 } else if (d20RadioButton.isChecked()) {
                     max = 20;
-                    rollResult = (int) Math.floor(Math.random()*(range)+min);
+                    rollResult = rand.nextInt(max) + 1;
                 } else if (d100RadioButton.isChecked()) {
                     max = 100;
-                    rollResult = (int) Math.floor(Math.random()*(range)+min);
+                    rollResult = rand.nextInt(max) + 1;
                 } else rollResult = 0;
                 resultTextView.setText(""+ rollResult);
                 break;
